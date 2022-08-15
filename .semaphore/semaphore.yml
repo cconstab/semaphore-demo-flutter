@@ -14,9 +14,11 @@ blocks:
         - name: Get deps
           commands:
             - checkout
-            - flutter upgrade
             - flutter pub get
             - cache store flutter-packages .packages
+      prologue:
+        commands:
+          - flutter upgrade
     dependencies: []
   - name: Test IOS
     task:
